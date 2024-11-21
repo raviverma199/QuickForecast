@@ -34,6 +34,18 @@ const WeatherReport = () => {
           </div>
         </div>
 
+
+        <div className="data-item1">
+  <div className="aqi-card">
+    <div className="aqi-info">
+      <h4>AQI: 75</h4>
+      <div className="aqi-status" style={{ backgroundColor: '#4CAF50' }}>Good</div>
+      <p>Air quality is considered satisfactory and poses little or no risk.</p>
+    </div>
+  </div>
+</div>
+
+
         {/* Weekly Data Section */}
         <div className="weekly-data">
           <h2 className="weekly-heading">7-Day Forecast</h2>
@@ -60,7 +72,7 @@ const WeatherReport = () => {
             </div>
             <div className="data-item">
               <p className="date">Fri</p>
-              <p className="temp">25°C</p>
+              <p className="temp">25°C</p>  
               <p className="desc">Sunny</p>
             </div>
             <div className="data-item">
