@@ -1,0 +1,132 @@
+/* Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to top, #2a2f7b, #4c6ef5);
+    color: #ffffff;
+    overflow: hidden;
+  }
+  
+  /* Container */
+  .intro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Content Box */
+  .intro-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 350px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+  }
+  
+  .intro-content:hover {
+    transform: translateY(-10px); /* Hover effect: lift the card */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  }
+  
+  /* Weather Icon */
+  .weather-icon {
+    width: 150px; /* Larger size */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; /* Smooth scale transition */
+  }
+  
+  .intro-content:hover .weather-icon {
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+  }
+  
+  /* Title Styling */
+  .app-title {
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .highlight {
+    color: #ffc107;
+  }
+  
+  /* Description */
+  .app-description {
+    font-size: 1rem;
+    color: #dcdcdc;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+  
+  /* Button Styling */
+  .get-started-btn {
+    background-color: #ffc107;
+    color: #2a2f7b;
+    border: none;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .get-started-btn:hover {
+    background-color: #ffb000;
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .app-title {
+      font-size: 2rem;
+    }
+  
+    .app-description {
+      font-size: 0.9rem;
+    }
+  
+    .get-started-btn {
+      padding: 12px 20px;
+      font-size: 1rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .intro-content {
+      padding: 30px 10px 35px 10px;
+      width: 90%; /* Ensuring there's space from the left and right */
+    }
+  
+    .weather-icon {
+      width: 120px; /* Adjust icon for small screens */
+    }
+  
+    .app-title {
+      font-size: 1.5rem;
+    }
+  
+    .app-description {
+      font-size: 0.85rem;
+    }
+  
+    .get-started-btn {
+      padding: 12px 18px;
+      font-size: 0.95rem;
+    }
+  }
+  
