@@ -1,5 +1,5 @@
 import Intropage from "./pages/intropage.tsx";
-import Weatherreport from "./pages/weatherreport.tsx";
+import Weatherreport from "./pages/weatherreport";
 
 import {
   BrowserRouter as Router,
