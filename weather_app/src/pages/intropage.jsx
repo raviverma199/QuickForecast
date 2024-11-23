@@ -2,6 +2,13 @@ import React from "react";
 import "../component/style/intropage.css"; // Make sure this path is correct
 import { useNavigate } from "react-router-dom"; // Import useNavigate for routing
 
+
+<style>
+
+  
+</style>
+
+
 const IntroPage = () => {
   const navigate = useNavigate(); // useNavigate hook for navigation
 

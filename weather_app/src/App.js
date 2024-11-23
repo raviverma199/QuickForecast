@@ -1,4 +1,4 @@
-import Intropage from "./pages/intropage.tsx";
+import Intropage from "./pages/intropage";
 import Weatherreport from "./pages/weatherreport";
 
 import {
