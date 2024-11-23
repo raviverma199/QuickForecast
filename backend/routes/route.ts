@@ -1,16 +1,13 @@
-import express from 'express'
+import express, { Request, Response, NextFunction } from "express";
 const route = express.Router();
+import axios from "axios";
+import dotenv from "dotenv";
+dotenv.config();
+import controller from "../controller/controller";
+const API_KEY = process.env.API_KEY as string;
 
+route.post("/api/weather", controller.GetCityName);
 
+route.post("/api/SearchWeatherCityWise", controller.CityWiseData);
 
-route.get('/', (req,res,next)=>{
-    try {
-        res.send('200')
-    } catch (error) {
-        console.log(error);
-    }
-})
-
-
-
-export default route
+export default route;
