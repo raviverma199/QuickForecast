@@ -7,27 +7,31 @@ const GetCityName = async (req: Request, res: Response) => {
 
     const CityData = await service.GetCityName(lat, lon);
 
-    res
-      .status(200)
-      .json({
-        success: true,
-        response: CityData?.Response.name,
-        WeatherReport: CityData?.weatherReport,
-      });
+    res.status(200).json({
+      success: true,
+      response: CityData?.Response.name,
+      WeatherReport: CityData?.weatherReport,
+    });
   } catch (error) {
     console.log(error);
   }
 };
 
-const CityWiseData = async (req: Request, res: Response) => {
+const CityWiseData = async (req: Request, res: Response): Promise<void> => {
   try {
     let city = req.body.city;
 
+    if (!city) {
+      res.status(500).json({ msg: "City Not Found" });
+    }
+
     let WeatherData = await service.GetWeatherReportCityWise(city);
 
-    console.log(WeatherData.response);
-    
-    res.status(200).json({ success: true, response: WeatherData });
+    if (WeatherData) {
+      res.status(200).json({ success: true, response: WeatherData });
+    } else {
+      res.status(200).json({ success: false });
+    }
   } catch (error) {
     console.log(error);
   }
