@@ -11,6 +11,7 @@ const GetCityName = async (req: Request, res: Response) => {
       success: true,
       response: CityData?.Response.name,
       WeatherReport: CityData?.weatherReport,
+      Aqi: CityData?.aqi,
     });
   } catch (error) {
     console.log(error);
@@ -27,8 +28,12 @@ const CityWiseData = async (req: Request, res: Response): Promise<void> => {
 
     let WeatherData = await service.GetWeatherReportCityWise(city);
 
-    if (WeatherData) {
-      res.status(200).json({ success: true, response: WeatherData });
+    if (WeatherData?.WeatherData) {
+      res.status(200).json({
+        success: true,
+        response: WeatherData?.WeatherData,
+        aqi: WeatherData?.aqi,
+      });
     } else {
       res.status(200).json({ success: false });
     }

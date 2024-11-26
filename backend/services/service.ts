@@ -78,12 +78,11 @@ const GetCityName = async (lat: number, lon: number) => {
     let weatherReport: GetWeatherReport = GetWeatherData.data;
 
     const response = await axios.get(
-      `API_URL_AQI?lat=${lat}&lon=${lon}&appid=${API_KEY}`
+      `${API_URL_AQI}?lat=${lat}&lon=${lon}&appid=${API_KEY}`
     );
     const aqi = response.data.list[0].main.aqi;
-    const pollutants = response.data.list[0].components;
 
-    return { Response, weatherReport };
+    return { Response, weatherReport, aqi };
   } catch (error) {
     console.log(error);
   }
@@ -96,7 +95,17 @@ const GetWeatherReportCityWise = async (city: string) => {
     let Response = await axios.get(URL);
 
     let WeatherData = Response.data;
-    return WeatherData;
+
+    const lat: number = WeatherData.coord.lat;
+    const lon: number = WeatherData.coord.lon;
+
+    const aqiUrl = `${API_URL_AQI}?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+    const aqiResponse = await axios.get(aqiUrl);
+    const aqiData = aqiResponse.data;
+
+    const aqi = aqiData.list[0].main.aqi;
+
+    return { WeatherData, aqi };
   } catch (error) {
     console.log(error);
   }
@@ -116,4 +125,4 @@ const GetAQIData = async (lat: number, lon: number) => {
   }
 };
 
-export default { GetCityName, GetWeatherReportCityWise };
+export default { GetCityName, GetWeatherReportCityWise, GetAQIData };
