@@ -1,15 +1,30 @@
-QuickForecast 🌤️<br>
-QuickForecast is a sleek and user-friendly weather checking app that provides real-time weather updates at your fingertips. Whether you want to plan your day or check the conditions in another city, QuickForecast has you covered.<br><br>
+### 🌤️ QuickForecast
+QuickForecast is a full-stack weather application that delivers real-time weather updates using the OpenWeatherMap API. Built with Node.js, TypeScript, and a modern frontend, it allows users to search for any city worldwide and instantly view detailed weather data — all within a clean, responsive interface.
 
-Features 📋<br>
-🌍 Global Weather Search: Get accurate weather data for any location worldwide.<br>
-🌡️ Detailed Conditions: View temperature, humidity, wind speed, and weather conditions.<br>
-🔄 Real-Time Updates: Always stay informed with the latest weather information.<br>
-🎨 Intuitive Design: Clean and responsive interface for a seamless user experience.<br><br>
 
-How It Works ⚙️<br>
--Enter the name of the city or location in the search bar.<br>
--Press Enter or click the search button.<br>
--Instantly view weather details like temperature, weather condition, and more.<br><br>
-API Integration 🌐<br>
--QuickForecast uses the OpenWeatherMap API to fetch real-time weather data.
+### 📋 Features
+
+- 🌍 Global Weather Search – Get accurate weather data for any location worldwide
+- 🌡️ Detailed Conditions – View temperature, humidity, wind speed, and weather status
+- 🔄 Real-Time Updates – Stay informed with the latest weather data
+- 🎨 Intuitive Design – Clean and responsive UI for a seamless experience
+- ⚙️ Server-Side API Integration – Powered by a TypeScript backend using OpenWeatherMap
+
+### 🧰 Tech Stack
+
+- React.js - Frotend
+- Node.js – Backend runtime
+- Express.js – REST API framework
+- TypeScript – Strongly typed backend for better scalability
+- Axios – For calling the OpenWeatherMap API
+- dotenv – Secure environment variable handling
+
+### ⚙️ How It Works
+
+- User enters a city name in the search bar
+- The frontend sends the request to the backend (/weather?city=London)
+- Backend fetches real-time weather data from OpenWeatherMap API
+- Weather info is sent back to the frontend and displayed instantly
+
+### 🌐 API Integration
+- QuickForecast uses the OpenWeatherMap REST API to fetch live weather data for any location. It extracts key fields such as temperature, condition, humidity, and wind speed.
